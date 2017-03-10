@@ -1,0 +1,21 @@
+tml, body, * {
+  box-sizing:border-box;
+}
+a:link{
+  color:gold;
+
+}
+a:visited{
+  color:green;
+
+}
+a:hover{
+  background-color: black;
+  color:white;
+}
+a:focus{
+  font-style:italic;
+}
+a:active{
+ text-decoration: line-through;
+}
