@@ -20,5 +20,17 @@ function chooseWord () {
 
 let word=chooseWord();
 
+//let test = document.getElementById("one");
+ //test.textContent= word;
+
+ function blanksFromAnswer ( word ) {
+
+    var result = "";
+    for ( i = 0; i < word.length; i++){
+    result= result + "_ ";
+}
+    return result;
+}
+
 let test = document.getElementById("one");
- test.textContent= word;
+ test.textContent= blanksFromAnswer(word);
