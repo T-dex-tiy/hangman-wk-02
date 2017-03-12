@@ -1,3 +1,5 @@
+function onLoad(){
+
 var wordsCom = [
   "the","and","you","that",
   "was","for","are","with","his","they",
@@ -11,8 +13,12 @@ var wordsCom = [
   "come","made","may","part"
 ];
 
-var letter =2;
-var letters =1;
+var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+
+
+// var letter =2;
+// var letters =1;
 function chooseWord () {
   var randomWord = wordsCom[Math.floor(Math.random() * wordsCom.length)];
    return randomWord;
@@ -54,7 +60,7 @@ let test = document.getElementById("one");
  // console.log(letter)
 
  function insertVar(){
-   console.log('letter', letter);
+   console.log('', letter);
  }
    var btn = document.querySelector ('button');
   //
@@ -62,9 +68,15 @@ let test = document.getElementById("one");
   //     var choice =
   //     document.getElementById("vari") = choice
   // }
-    btn.addEventListener('click', insertVar)
+  btn.addEventListener('click', insertVar);
 //  var n ="word".indexOf(c)
 
 // var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 // test.textContent = alterAt(n,c,word);
+
+
+
+
+}
+window.onload = onLoad;
