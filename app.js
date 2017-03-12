@@ -1,17 +1,18 @@
 var wordsCom = [
-  "the","of","and","a","to","in","is","you","that","it","he",
-  "was","for","on","are","as","with","his","they","I","at","be",
-  "this","have","from","or","one","had","by","word","but","not",
-  "what","all","were","we","when","your","can","said","there",
-  "use","an","each","which","she","do","how","their","if","will",
-  "up","other","about","out","many","then","them","these","so",
+  "the","and","you","that",
+  "was","for","are","with","his","they",
+  "this","have","from","one","had","word","but","not",
+  "what","all","were","when","your","can","said","there",
+  "use","each","which","she","how","their","will","other","about","many","then","them","these",
   "some","her","would","make","like","him","into","time","has",
-  "look","two","more","write","go","see","number","no","way",
-  "could","people","my","than","first","water","been","call",
+  "look","two","more","write","see","number","way",
+  "could","people","than","first","water","been","call",
   "who","oil","its","now","find","long","down","day","did","get",
   "come","made","may","part"
 ];
 
+var letter =2;
+var letters =1;
 function chooseWord () {
   var randomWord = wordsCom[Math.floor(Math.random() * wordsCom.length)];
    return randomWord;
@@ -20,8 +21,6 @@ function chooseWord () {
 
 let word=chooseWord();
 
-//let test = document.getElementById("one");
- //test.textContent= word;
 
  function blanksFromAnswer ( word ) {
 
@@ -34,3 +33,38 @@ let word=chooseWord();
 
 let test = document.getElementById("one");
  test.textContent= blanksFromAnswer(word);
+
+ function alterAt ( n, choice, word) {
+    return word.substr(0,n) + choice + word.substr(1+n,word.length);
+
+ }
+ function guessLetter( letter, shown, answer ) {
+    var checkIndex = 0;
+
+    checkIndex = answer.indexOf(letter);
+    while ( checkIndex >= 0 ) {
+        shown = alterAt( checkIndex, letter, shown );
+        checkIndex = answer.indexOf(letter, checkIndex + 1);
+    }
+    return shown;
+}
+
+ let boxInput = document.querySelector ('input');
+ letter = boxInput.value;
+ // console.log(letter)
+
+ function insertVar(){
+   console.log('letter', letter);
+ }
+   var btn = document.querySelector ('button');
+  //
+  //   function insertVar(){
+  //     var choice =
+  //     document.getElementById("vari") = choice
+  // }
+    btn.addEventListener('click', insertVar)
+//  var n ="word".indexOf(c)
+
+// var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+
+// test.textContent = alterAt(n,c,word);
