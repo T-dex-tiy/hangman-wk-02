@@ -1,4 +1,9 @@
 function onLoad(){
+ // var playerName= prompt("What should I call you");
+ //  document.getElementById("start").onclick = function(){
+ //    function chooseWord ()
+ //    document.getElementById("player-name").innerHTML = playerName;
+ //  }
 
 var wordsCom = [
   "the","and","you","that",
@@ -55,28 +60,33 @@ let test = document.getElementById("one");
     return shown;
 }
 
- let boxInput = document.querySelector ('input');
- letter = boxInput.value;
+ // let boxInput = document.querySelector ('input');
+ // letter = boxInput.value;
  // console.log(letter)
 
- function insertVar(){
-   console.log('', letter);
- }
-   var btn = document.querySelector ('button');
-  //
-  //   function insertVar(){
-  //     var choice =
-  //     document.getElementById("vari") = choice
-  // }
-  btn.addEventListener('click', insertVar);
+//  function insertVar(){
+//    console.log('', letter);
+//  }
+//    var btn = document.querySelector ('button');
+//   //
+//   //   function insertVar(){
+//   //     var choice =
+//   //     document.getElementById("vari") = choice
+//   // }
+let vari = document.querySelector('input#vari');
+let btn = document.querySelector("button#accept");
+  btn.addEventListener('click', function(){
+    letter = vari.value;
+    console.log(letter);
+  });
 //  var n ="word".indexOf(c)
-
-// var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
-
-// test.textContent = alterAt(n,c,word);
-
-
-
+//
+// // var letters = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+//
+// // test.textContent = alterAt(n,c,word);
+//
+//
+//
 
 }
 window.onload = onLoad;
