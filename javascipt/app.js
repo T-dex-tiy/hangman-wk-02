@@ -13,7 +13,7 @@ var wordsCom = [
   "come","made","may","part"
 ];
 
-var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
+//var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q','r','s','t','u','v','w','x','y','z'];
 
 
 
@@ -22,10 +22,10 @@ var letter = ['a','b','c','d','e','f','g','h','i','j','k','l','m','n','o','p','q
 function chooseWord () {
   var randomWord = wordsCom[Math.floor(Math.random() * wordsCom.length)];
    return randomWord;
+
 };
 
-
-let word=chooseWord();
+let word = chooseWord();
 
 
  function blanksFromAnswer ( word ) {

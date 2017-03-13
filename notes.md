@@ -8,4 +8,10 @@ After getting that to run needed to change words into blanks. Needed to change w
 Stuck on conecting the letter guessing to the game.
 I have added a input and text box just to get something on the page.
 
-Struggled with grabbing the data from the input field on to the app to change the DOM
+Struggled with grabbing the data from the input field on to the app to change the DOM. After playing with eventlister and query selector Managed to get code to work.
+
+
+Added Alpahbet visual to HTML thru Javascript with // let alphabetNode = document.querySelector("div#alphabet")
+alphabetNode.textContent = alphabet.join(" ");
+
+[Python tutor](http://pythontutor.com/javascript.html#code=%0Afunction%20alterAt%20%28%20n,%20c,%20word%29%20%7B%0A%20%20%20%20return%20word.substr%280,n%29%20%2B%20c%20%2B%20word.substr%281%2Bn,word.length%29%3B%0A%0A%20%7D%0Afunction%20guessLetter%28%20letter,%20shown,%20answer%20%29%20%7B%0A%20%20%20%20var%20checkIndex%20%3D%200%3B%0A%0A%20%20%20%20checkIndex%20%3D%20answer.indexOf%28letter%29%3B%0A%20%20%20%20while%20%28%20checkIndex%20%3E%3D%200%20%29%20%7B%0A%20%20%20%20%20%20%20%20shown%20%3D%20alterAt%28%20checkIndex,%20letter,%20shown%20%29%3B%0A%20%20%20%20%20%20%20%20checkIndex%20%3D%20answer.indexOf%28letter,%20checkIndex%20%2B%201%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20shown%3B%0A%7D%0A%0AalterAt%284,%20guessLetter,%20'joining'%29%0AguessLetter%20%28%22n%22,%20%22_%22,%20%22n%22%29&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D) Got the correct varibles to print

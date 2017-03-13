@@ -1,4 +1,4 @@
-tml, body, * {
+html, body, * {
   box-sizing:border-box;
 }
 a:link{
@@ -18,4 +18,12 @@ a:focus{
 }
 a:active{
  text-decoration: line-through;
+}
+.cf:before,
+.cf:after{
+  content:" ";
+  display:table;
+}
+.cf:after{
+clear:both;
 }
