@@ -23,6 +23,10 @@ function onLoad(){
   let alphabetNode = document.querySelector("div#alphabet")
   alphabetNode.textContent = alphabet.join(" ");
 
+  // var word = '';
+  // var result = '';
+  // var letter = '';
+
   // var letter =2;
   // var letters =1;
   function chooseWord () {
@@ -37,7 +41,7 @@ function onLoad(){
   function blanksFromAnswer (word) {
     var result = "";
     for ( i = 0; i < word.length; i++){
-      result= result + "_";
+      result= result + "_ ";
     }
 
     return result;
@@ -46,10 +50,12 @@ function onLoad(){
   let test = document.getElementById("one");
   test.textContent= blanksFromAnswer(word);
   let result = blanksFromAnswer(word);
+  // function checkresult(){
+  // result = blanksFromAnswer(word);
+  // };
 
-  console.log(result);
 
-  function verifyInput () {
+  function verifyInput (letter) {
     if (typeof input !== "string" || input.length != 1) {
       console.log("not a valid entry!");
       return false;
@@ -68,8 +74,10 @@ function onLoad(){
     } while (i != -1)
     let joinArr = arr.join("");
     console.log(joinArr);
+    // result = joinArr;
     return joinArr;
   }
+
 
   let vari = document.querySelector('input#vari');
   let btn = document.querySelector("button#accept"); btn.addEventListener('click', function(){
