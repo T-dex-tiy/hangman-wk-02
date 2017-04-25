@@ -1,11 +1,4 @@
 function onLoad(){
- // var playerName= prompt("What should I call you");
- //  document.getElementById("start").onclick = function(){
- //    function chooseWord ()
- //    document.getElementById("player-name").innerHTML = playerName;
- //  }
-
-
   var wordsCom = [
     "the","and","you","that",
     "was","for","are","with","his","they",
@@ -27,10 +20,9 @@ function onLoad(){
   var result = '';
   var letter = '';
   var checkedResult ='';
+  var attempts ='10';
 
 
-  // var letter =2;
-  // var letters =1;
   function chooseWord () {
     var randomWord = wordsCom[Math.floor(Math.random() * wordsCom.length)];
      return randomWord;
@@ -40,25 +32,26 @@ function onLoad(){
   word = chooseWord();
 
   function blanksFromAnswer (word) {
-    var blanks = "";
+    var results = result;
     for ( i = 0; i < word.length; i++){
-      blanks = blanks + "_";
+      results = results + "_";
     }
-    return blanks;
+    return results;
   }
 result = blanksFromAnswer(word);
 console.log(result, word)
 
-
+function updatePlyerconsole(){
   let test = document.getElementById("one");
-  test.textContent= result;
+  console.log(test.value);
+  test.textContent=result;
+}
 
   function updateResult(checkedResult){
   var newResult = checkedResult;
   result = newResult;
   return newResult;
   };
-
 
 
   function verifyInput(letter) {
@@ -78,7 +71,6 @@ console.log(result, word)
       arr[i] = letter;
     } while (i != -1)
     let joinArr = arr.join("");
-    console.log("joinArr", joinArr);
     checkedResult = joinArr;
     return joinArr;
   }
@@ -90,16 +82,16 @@ console.log(checkedResult);
   let btn = document.querySelector("button#accept"); btn.addEventListener('click', function(){
     letter = vari.value;
     console.log(letter);
-    // verifyInput(letter);
-    // console.log('letter is:', verifyInput(letter));
     checkedResult = checkLetter(letter,word,result);
     updateResult(checkedResult);
-    console.log(result);
-    // checkLetter(letter,word,result);
-    // checkresult(checkedResult);
+    blanksFromAnswer(result);
+    updatePlyerconsole();
+    console.log("current result", result);
+    console.log("current word", word);
+
 
     return letter;
   });
-
+updatePlyerconsole();
 }
 window.onload = onLoad;
