@@ -80,11 +80,17 @@ function updatePlyerconsole(){
   }
 
   function setAttempts(){
-    if (guessedLetter()===false){
+    if (guessedLetter()===true){
       var attempt=attempts;
-      attempt--;
       console.log(attempt);
       return attempt;
+    }
+    else{
+    var attempt=attempts;
+    attempt--;
+    console.log(attempt);
+    return attempt;
+
     }
   }
 
