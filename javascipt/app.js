@@ -23,40 +23,46 @@ function onLoad(){
   let alphabetNode = document.querySelector("div#alphabet")
   alphabetNode.textContent = alphabet.join(" ");
 
-  // var word = '';
-  // var result = '';
-  // var letter = '';
+  var word = '';
+  var result = '';
+  var letter = '';
+  var checkedResult ='';
+
 
   // var letter =2;
   // var letters =1;
   function chooseWord () {
     var randomWord = wordsCom[Math.floor(Math.random() * wordsCom.length)];
-    console.log(randomWord);
      return randomWord;
 
   };
 
-  let word = chooseWord();
+  word = chooseWord();
 
   function blanksFromAnswer (word) {
-    var result = "";
+    var blanks = "";
     for ( i = 0; i < word.length; i++){
-      result= result + "_ ";
+      blanks = blanks + "_";
     }
-
-    return result;
+    return blanks;
   }
+result = blanksFromAnswer(word);
+console.log(result, word)
+
 
   let test = document.getElementById("one");
-  test.textContent= blanksFromAnswer(word);
-  let result = blanksFromAnswer(word);
-  // function checkresult(){
-  // result = blanksFromAnswer(word);
-  // };
+  test.textContent= result;
+
+  function updateResult(checkedResult){
+  var newResult = checkedResult;
+  result = newResult;
+  return newResult;
+  };
 
 
-  function verifyInput (letter) {
-    if (typeof input !== "string" || input.length != 1) {
+
+  function verifyInput(letter) {
+    if (typeof input !== 'string' || input.length != 1) {
       console.log("not a valid entry!");
       return false;
     }
@@ -64,7 +70,6 @@ function onLoad(){
   }
 
   function checkLetter (letter, word, result) {
-    console.log(result);
     let arr = result.split("");
     let i = -1;
     do {
@@ -73,18 +78,26 @@ function onLoad(){
       arr[i] = letter;
     } while (i != -1)
     let joinArr = arr.join("");
-    console.log(joinArr);
-    // result = joinArr;
+    console.log("joinArr", joinArr);
+    checkedResult = joinArr;
     return joinArr;
   }
 
+
+console.log(checkedResult);
 
   let vari = document.querySelector('input#vari');
   let btn = document.querySelector("button#accept"); btn.addEventListener('click', function(){
     letter = vari.value;
     console.log(letter);
-    verifyInput(letter);
-    checkLetter(letter,word,result);
+    // verifyInput(letter);
+    // console.log('letter is:', verifyInput(letter));
+    checkedResult = checkLetter(letter,word,result);
+    updateResult(checkedResult);
+    console.log(result);
+    // checkLetter(letter,word,result);
+    // checkresult(checkedResult);
+
     return letter;
   });
 

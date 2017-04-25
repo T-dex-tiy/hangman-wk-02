@@ -2,9 +2,15 @@
   font-family: Gallows;
   src: url("fonts/GallowTree-Regular.ttf");
 }
+.container{
+  display: flex;
+}
 h1 {
    font-family: Gallows;
    color:white
+ }
+ .gpelements{
+   justify-content: center;
  }
  div{
    font-family: Gallows;
@@ -20,3 +26,4 @@ h1 {
    background-size: cover;
 
  }
+ .gpelements
