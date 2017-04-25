@@ -100,6 +100,23 @@ function updatePlyerconsole(){
     return newAttempt;
   }
 
+  //Win or lose functions
+  function win(){
+    if (result.includes('_')){
+      return false
+    }
+    else{
+      console.log('You Won!');
+    }
+  }
+
+  function lives(){
+    if(attempts<=0){
+      console.log("You lose!");
+    }
+  }
+
+
 
   //gameplay function
   function checkLetter (letter, word, result) {
@@ -129,6 +146,8 @@ console.log(checkedResult);
     guessedLetter();
     setAttempts();
     showAttempts(setAttempts());
+    win();
+    lives();
     console.log("current result", result);
     console.log("current word", word);
 
