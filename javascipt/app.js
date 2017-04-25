@@ -22,6 +22,8 @@ function onLoad(){
   var checkedResult ='';
   var attempts ='10';
 
+//gameplay elements
+
 
   function chooseWord () {
     var randomWord = wordsCom[Math.floor(Math.random() * wordsCom.length)];
@@ -62,6 +64,38 @@ function updatePlyerconsole(){
     return true;
   }
 
+
+//Attempting selcetions
+  document.querySelector('.attempt').innerHTML = 'You have ' + attempts + ' attempts left';
+
+  function guessedLetter(){
+    if (word.includes(letter)){
+      document.querySelector('.attempt').innerHTML = 'You have ' + attempts + ' attempts left';
+      return true;
+    }
+    else{
+      document.querySelector('.attempt').innerHTML = 'You have ' + attempts + ' attempts left';
+      return false;
+    }
+  }
+
+  function setAttempts(){
+    if (guessedLetter()===false){
+      var attempt=attempts;
+      attempt--;
+      console.log(attempt);
+      return attempt;
+    }
+  }
+
+  function showAttempts(setAttempts){
+    var newAttempt=setAttempts;
+    attempts = newAttempt;
+    return newAttempt;
+  }
+
+
+  //gameplay function
   function checkLetter (letter, word, result) {
     let arr = result.split("");
     let i = -1;
@@ -86,6 +120,9 @@ console.log(checkedResult);
     updateResult(checkedResult);
     blanksFromAnswer(result);
     updatePlyerconsole();
+    guessedLetter();
+    setAttempts();
+    showAttempts(setAttempts());
     console.log("current result", result);
     console.log("current word", word);
 
@@ -93,5 +130,8 @@ console.log(checkedResult);
     return letter;
   });
 updatePlyerconsole();
+
+
+
 }
 window.onload = onLoad;
