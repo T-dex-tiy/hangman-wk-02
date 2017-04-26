@@ -107,7 +107,7 @@ function updatePlyerconsole(){
     }
     else{
       document.querySelector('.attempt').innerHTML = "WINNER WINNER!"
-      console.log('You Won!');
+      console.log('You Won!');  document.querySelector('.life').style.visibility='visible';
     }
   }
 
