@@ -66,15 +66,15 @@ function updatePlyerconsole(){
 
 
 //Attempting selcetions
-  document.querySelector('.attempt').innerHTML = 'You have ' + attempts + ' attempts left';
+  document.querySelector('.attempt').innerHTML = 'YOU HAVE ' + attempts + ' ATTEMPTS LEFT!';
 
   function guessedLetter(){
     if (word.includes(letter)){
-      document.querySelector('.attempt').innerHTML = 'You have ' + attempts + ' attempts left';
+      document.querySelector('.attempt').innerHTML = 'YOU HAVE ' + attempts + ' ATTEMPTS LEFT!';
       return true;
     }
     else{
-      document.querySelector('.attempt').innerHTML = 'You have ' + attempts + ' attempts left';
+      document.querySelector('.attempt').innerHTML = 'YOU HAVE ' + attempts + ' ATTEMPTS LEFT!';
       return false;
     }
   }
@@ -82,15 +82,12 @@ function updatePlyerconsole(){
   function setAttempts(){
     if (guessedLetter()===true){
       var attempt=attempts;
-      console.log(attempt);
       return attempt;
     }
     else{
     var attempt=attempts;
     attempt--;
-    console.log(attempt);
     return attempt;
-
     }
   }
 
