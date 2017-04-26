@@ -22,6 +22,8 @@ function onLoad(){
   var checkedResult ='';
   var attempts ='10';
 
+
+
 //gameplay elements
 
 
@@ -98,20 +100,27 @@ function updatePlyerconsole(){
   }
 
   //Win or lose functions
+
   function win(){
     if (result.includes('_')){
       return false
     }
     else{
+      document.querySelector('.attempt').innerHTML = "WINNER WINNER!"
       console.log('You Won!');
     }
   }
 
   function lives(){
     if(attempts<=0){
+      document.querySelector('.attempt').innerHTML = "YOU LOSE!";
+      document.querySelector('.death').style.visibility='visible';
+
       console.log("You lose!");
     }
   }
+
+
 
 
 
