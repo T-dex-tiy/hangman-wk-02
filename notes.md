@@ -15,3 +15,18 @@ Added Alpahbet visual to HTML thru Javascript with // let alphabetNode = documen
 alphabetNode.textContent = alphabet.join(" ");
 
 [Python tutor](http://pythontutor.com/javascript.html#code=%0Afunction%20alterAt%20%28%20n,%20c,%20word%29%20%7B%0A%20%20%20%20return%20word.substr%280,n%29%20%2B%20c%20%2B%20word.substr%281%2Bn,word.length%29%3B%0A%0A%20%7D%0Afunction%20guessLetter%28%20letter,%20shown,%20answer%20%29%20%7B%0A%20%20%20%20var%20checkIndex%20%3D%200%3B%0A%0A%20%20%20%20checkIndex%20%3D%20answer.indexOf%28letter%29%3B%0A%20%20%20%20while%20%28%20checkIndex%20%3E%3D%200%20%29%20%7B%0A%20%20%20%20%20%20%20%20shown%20%3D%20alterAt%28%20checkIndex,%20letter,%20shown%20%29%3B%0A%20%20%20%20%20%20%20%20checkIndex%20%3D%20answer.indexOf%28letter,%20checkIndex%20%2B%201%29%3B%0A%20%20%20%20%7D%0A%20%20%20%20return%20shown%3B%0A%7D%0A%0AalterAt%284,%20guessLetter,%20'joining'%29%0AguessLetter%20%28%22n%22,%20%22_%22,%20%22n%22%29&curInstr=0&mode=display&origin=opt-frontend.js&py=js&rawInputLstJSON=%5B%5D) Got the correct varibles to print
+  --------------
+
+  Weeks of no work and came back and added needed functions to push data into array and display array. Tied those items into the attempts that are left in the players guesses. Should add an attempted letter box, but with the time frame on this being WAY OVER DUE figured I would get this up and finshed before I just straight up frogot about it.
+
+## Would like to add ##
+-clear/reset button
+-way of clearing input box after each guess
+-removal of letter from array(this one I think I could do with 20 more lines of code and with how bloated this one feels I will figure out how to remove them another way. .splice maybe?)
+
+-General optimization of the code would be great to look back and see what I have done since I started.
+
+______________________
+----------------------
+
+That is all for the notes of this project while a student/sponge at the Iron Yard 4/26/2017
