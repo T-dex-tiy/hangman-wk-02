@@ -3,6 +3,7 @@
   src: url("fonts/GallowTree-Regular.ttf");
 }
 .container{
+  border: 1px white solid;
   display: flex;
 }
 
@@ -19,10 +20,10 @@
  }
  .gpelements{
    display:flex;
-   flex-direction: column;
-   justify-content: center;
-   align-items: center;
+   /*flex-direction: column;*/
+   justify-content: flex-start;
    flex:1;
+   border: 1px white solid;
  }
  div{
    font-family: Gallows;
@@ -39,4 +40,14 @@
    background:url(1.jpg) no-repeat center center fixed;
    background-size: cover;
  }
- .gpelements
+ .finalimage{
+   display:flex;
+   align-items: center;
+ }
+.main{
+  border: 1px solid white;
+}
+.gameElements{
+  border: 1px white solid;
+  flex: 1;
+}

@@ -18,20 +18,23 @@
     <div class="gameplay container">
 
       <div class="gpelements">
-
-
+      <div class="main">
         <h1>LETS HANGMAN!</h1>
         <p id ="one"></p>
           <input id="vari" type="text" name="boxInput" placeholder ="Wadda got?" maxlength = "1" value=""/>
           <button id ="accept" type="button" name="button" onclick="">LETS GIVER!</button>
-
+          <button type = "button" name ="newgame" onclick="window.location.reload()">I GIVE UP</button>
           <div id="alphabet"></div>
-
           <div class="attempt"></div>
+          <div class="finalimage" ><img class='death finalimage ' src='./death.gif' style='visibility:hidden'/>
+          <img class='life finalimage'src='./download.gif' style='visibility:hidden'/></div>
+      </div>
+      <div class="gameElements">
+        <p>Letters guessed</p>
+        <div class = "guessedLetters">
 
-          <div><img class='death'src='./death.gif' style='visibility:hidden'/>
-          <img class='life'src='./download.gif' style='visibility:hidden'/></div>
-
+        </div>
+      </div>
         </div>
     </div>
 

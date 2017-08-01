@@ -45,10 +45,10 @@ function onLoad(){
 result = blanksFromAnswer(word);
 console.log(result, word)
 
-function updatePlyerconsole(){
-  let test = document.getElementById("one");
-  console.log(test.value);
-  test.textContent=result;
+function updatePlayerconsole(){
+  let test = document.getElementById("one")
+  test.textContent = result;
+  
 }
 
   function updateResult(checkedResult){
@@ -148,7 +148,7 @@ console.log(checkedResult);
     checkedResult = checkLetter(letter,word,result);
     updateResult(checkedResult);
     blanksFromAnswer(result);
-    updatePlyerconsole();
+    updatePlayerconsole();
     guessedLetter();
     setAttempts();
     showAttempts(setAttempts());
@@ -160,7 +160,7 @@ console.log(checkedResult);
 
     return letter;
   });
-updatePlyerconsole();
+updatePlayerconsole();
 
 
 
