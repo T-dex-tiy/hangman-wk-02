@@ -19,6 +19,7 @@ function onLoad(){
   var word = '';
   var result = '';
   var letter = '';
+  var guessedLetters=''
   var checkedResult ='';
   var attempts ='10';
 
@@ -48,12 +49,12 @@ console.log(result, word)
 function updatePlayerconsole(){
   let test = document.getElementById("one")
   test.textContent = result;
-  
+  console.log(attempts, "updatePlayerconsole function");
 }
-
   function updateResult(checkedResult){
   var newResult = checkedResult;
   result = newResult;
+  console.log(attempts, "updateResult function");
   return newResult;
   };
 
@@ -81,23 +82,33 @@ function updatePlayerconsole(){
     }
   }
 
+  function showAttempts(setAttempts){
+    var newAttempt=setAttempts;
+    console.log(attempts, "set");
+    attempts = newAttempt;
+    return newAttempt;
+  }
+
   function setAttempts(){
     if (guessedLetter()===true){
       var attempt=attempts;
+      console.log("hit",attempt);
       return attempt;
     }
     else{
     var attempt=attempts;
     attempt--;
+    console.log("miss",attempt);
     return attempt;
     }
   }
 
-  function showAttempts(setAttempts){
-    var newAttempt=setAttempts;
-    attempts = newAttempt;
-    return newAttempt;
-  }
+  // function showAttempts(setAttempts){
+  //   var newAttempt=setAttempts;
+  //   console.log(attempts, "set");
+  //   attempts = newAttempt;
+  //   return newAttempt;
+  // }
 
   //Win or lose functions
 
@@ -115,21 +126,28 @@ function updatePlayerconsole(){
     if(attempts<=0){
       document.querySelector('.attempt').innerHTML = "YOU LOSE!";
       document.querySelector('.death').style.visibility='visible';
-
       console.log("You lose!");
     }
   }
 
 
 
+function lettersGuessed(){
+//   guessedLetters += letter
+//   document.querySelector('.lettersguessed').innerHTML='Letters used: ' + guessedLetters;
+//
+guessedLetters=document.getElementById("lettersguessed")
+guessedLetters.textContent = letter;
+
+}
 
 
-  //gameplay function
+
+//gameplay function
   function checkLetter (letter, word, result) {
     let arr = result.split("");
     let i = -1;
     do {
-      // i++;
       i = word.indexOf(letter, ++i);
       arr[i] = letter;
     } while (i != -1)
@@ -143,24 +161,31 @@ console.log(checkedResult);
 
   let vari = document.querySelector('input#vari');
   let btn = document.querySelector("button#accept"); btn.addEventListener('click', function(){
-    letter = vari.value;
-    console.log(letter);
+
+    letter = vari.value.toLowerCase();
     checkedResult = checkLetter(letter,word,result);
+    console.log(checkedResult, "checkedResult");
     updateResult(checkedResult);
     blanksFromAnswer(result);
     updatePlayerconsole();
     guessedLetter();
-    setAttempts();
+    // setAttempts();
     showAttempts(setAttempts());
     win();
     lives();
+    updatePlayerconsole();
+    lettersGuessed();
+    letter.toLowerCase();
+    console.log(letter);
+    console.log(lettersGuessed());
     console.log("current result", result);
     console.log("current word", word);
-
+    vari.value=''
 
     return letter;
   });
 updatePlayerconsole();
+console.log(showAttempts(setAttempts()));
 
 
 

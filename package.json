@@ -1,0 +1,22 @@
+{
+  "name": "hangman",
+  "version": "1.0.0",
+  "description": "",
+  "main": "simplehangman.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/T-dex-tiy/hangman-wk-02.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/T-dex-tiy/hangman-wk-02/issues"
+  },
+  "homepage": "https://github.com/T-dex-tiy/hangman-wk-02#readme",
+  "devDependencies": {
+    "tape": "^4.8.0"
+  }
+}
